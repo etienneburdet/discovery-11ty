@@ -1,0 +1,15 @@
+---
+layout: base
+permalink: "/{{ locale }}/"
+eleventyNavigation:
+  key: Home
+---
+
+<div class="container">
+    {% set posts = collections["posts_" + locale] %}
+    <ul>
+      {% for post in posts %}
+      <li>{{ post.data }}</li>
+      {% endfor %}
+    </ul>
+</div>

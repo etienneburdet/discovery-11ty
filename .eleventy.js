@@ -44,6 +44,15 @@ module.exports = function (config) {
         })
     )
 
+    //Collections
+    config.addCollection('posts_en', (collection) => {
+      return collection.getFilteredByGlob('./src/en/posts/*.md')
+    })
+
+    config.addCollection('posts_fr', (collection) => {
+      return collection.getFilteredByGlob('./src/fr/posts/*.md')
+    })
+
     // Layouts
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('post', 'post.njk')
